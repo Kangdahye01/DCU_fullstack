@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class CalcTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//1. 입력
+		Scanner scanner = new Scanner (System.in);
+		System.out.print("피연산자1 : ");
+		int number1 = scanner.nextInt();
+		System.out.print("연산자(+|-|/|*) : ");
+		String opt = scanner.next();
+		System.out.print("피연산자2 : ");
+		int number2 = scanner.nextInt();
+		
+		//2. 연산
+		/*
+		 * int result = 0; boolean rightOperator = true;
+		 * 
+		 * if(opt.contentEquals("+")) { result = number1 + number2; } else
+		 * if(opt.contentEquals("-")) { result = number1 - number2; } else
+		 * if(opt.contentEquals("*")) { result = number1 * number2; } else
+		 * if(opt.contentEquals("/")) { result = number1 / number2; } else {
+		 * rightOperator = false; }
+		 */
+		int result = 0; 
+		boolean rightOperator = true;
+		switch (opt) {
+		case "+" :
+			result = number1 + number2;
+			break;
+		case "-" :
+			result = number1 - number2;
+			break;
+		case "*" :
+			result = number1 * number2;
+			break;
+		case "/" :
+			result = number1 / number2;
+			break;
+			
+		default:
+			rightOperator = false;
+			break;
+		}
+		
+		
+		
+		
+		//3. 출력
+		if(rightOperator) {
+			System.out.println(number1 + " " + opt + " " + number2 + " = " + result);
+		}
+		else { 
+			System.out.println("연산자가 올바르지 않습니다");
+		}
+		
+	}
+
+}
