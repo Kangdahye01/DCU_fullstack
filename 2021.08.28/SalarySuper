@@ -1,0 +1,39 @@
+class SalarySuper{
+	String name;
+	int salary;
+
+	SalarySuper(){}//class 이름이 똑같고 인자가지고 있는 애를 생성자를 만들어주려면 이 작업을 해줘야함.
+	SalarySuper(String n, int s){
+		//this.name = name;
+		name = n;
+		salary = s;
+	}
+	//메소드 만들땐 public void
+	public void getInformation( ) {
+		System.out.println( name +  salary );
+	}
+}
+
+class SalarySub extends SalarySuper {
+	String department;
+	
+	SalarySub(){}
+	SalarySub(String name, int salary, String department){
+		this.name = name;
+		this.salary = salary;
+		this.department = department;
+	}
+	
+	public void getInformation() {
+		//getInformation();
+		System.out.println(name+ "," + salary+ "," + department);
+		//System.out.println(department);
+	}
+}
+
+public class WorkShop2 {
+	public static void main(String[] args) {
+		SalarySub ob = new SalarySub("오정원",15000000,"프리렌서");
+		ob.getInformation();
+	}
+}
