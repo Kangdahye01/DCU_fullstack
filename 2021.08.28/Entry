@@ -1,0 +1,36 @@
+class Entry {
+	String word;
+	
+	Entry(){}
+	Entry(String w){
+		word = w;
+	}
+	public void writeView() {
+		System.out.println(word);
+	}
+}
+
+class SubClass extends Entry {
+	String definition;
+	int year;
+	
+	SubClass(){}
+	SubClass(String w){
+		word = w;
+	}
+	SubClass(String w, String d, int y){
+		definition = d;
+		year = y;
+	}
+	public void PrintView() {
+		System.out.println(word +","+ definition+"," + year );
+	}
+
+public class Workshop1 {
+
+	public static void main(String[] args) {
+		SubClass pp = new SubClass("OOP","Object Oriented Programming", 1991);
+	}
+
+}
+}
