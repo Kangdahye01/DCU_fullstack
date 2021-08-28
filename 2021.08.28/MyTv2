@@ -1,0 +1,39 @@
+class MyTv2 {
+boolean isPowerOn;
+int channel;
+int prevchannel;
+int temp;
+int volume;
+final int MAX_VOLUME = 100;
+final int MIN_VOLUME = 0;
+final int MAX_CHANNEL = 100;
+final int MIN_CHANNEL = 1;
+public int getChannel() { //저장되있는 채널을 가져와서 출력해주는 애(값을 가져오는 애)
+	return channel;
+}
+public void setChannel(int ch) {//입력받은 값을 채널에 저장시켜주는 애
+	prevchannel = channel; 
+	channel = ch;
+}
+	public void gotoPrevChannel() {//goto는 값을 바궈주는거
+		temp = channel; // '저장될 공간' = ' 입력받은 값' => 입력받은 값이 저장될 공간으로 들어간다는 함수 
+		channel = prevchannel;
+		prevchannel = temp;
+	}
+}
+public class Exercise {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MyTv2 t = new MyTv2();
+		t.setChannel(10);
+		System.out.println("CH:"+t.getChannel());
+		t.setChannel(20);
+		System.out.println("CH:"+t.getChannel());
+		t.gotoPrevChannel();
+		System.out.println("CH:"+t.getChannel());
+		t.gotoPrevChannel();
+		System.out.println("CH:"+t.getChannel());
+	}
+
+}
